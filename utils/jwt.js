@@ -1,16 +1,24 @@
 // utils/jwt.js
-import jwt from "jsonwebtoken";
+import { SignJWT, jwtVerify } from "jose"
 
-const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
+const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this"
 
-export function signToken(payload) {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: "1d" });
+export async function signToken(payload) {
+  const secret = new TextEncoder().encode(JWT_SECRET)
+  const token = await new SignJWT(payload)
+    .setProtectedHeader({ alg: "HS256" })
+    .setExpirationTime("1d")
+    .setIssuedAt()
+    .sign(secret)
+  return token
 }
 
-export function verifyToken(token) {
+export async function verifyToken(token) {
   try {
-    return jwt.verify(token, JWT_SECRET);
+    const secret = new TextEncoder().encode(JWT_SECRET)
+    const { payload } = await jwtVerify(token, secret)
+    return payload
   } catch {
-    return null;
+    return null
   }
 }
