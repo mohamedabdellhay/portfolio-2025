@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Background circles -->
+  <circle cx="150" cy="150" r="140" fill="#f0f4f8"/>
+  <circle cx="150" cy="150" r="100" fill="#d9e2ec"/>
+  
+  <!-- Robot body -->
+  <rect x="110" y="120" width="80" height="80" rx="10" fill="#fff" stroke="#9fb3c8" stroke-width="3"/>
+  <rect x="130" y="100" width="40" height="20" rx="5" fill="#fff" stroke="#9fb3c8" stroke-width="3"/>
+  
+  <!-- Robot eyes -->
+  <circle cx="140" cy="140" r="5" fill="#9fb3c8"/>
+  <circle cx="160" cy="140" r="5" fill="#9fb3c8"/>
+  
+  <!-- Warning sign -->
+  <polygon points="150,170 140,190 160,190" fill="#ff6b6b"/>
+  
+  <!-- Abstract shapes -->
+  <circle cx="60" cy="60" r="10" fill="#a3cef1"/>
+  <circle cx="240" cy="50" r="8" fill="#ffcb77"/>
+  <circle cx="50" cy="240" r="12" fill="#b5ead7"/>
+  <circle cx="250" cy="250" r="6" fill="#ff6b6b"/>
+  
+  <!-- Text 404 -->
+  <text x="150" y="280" font-size="28" text-anchor="middle" fill="#627d98" font-family="Arial, sans-serif" font-weight="bold">
+    404
+  </text>
+</svg>
