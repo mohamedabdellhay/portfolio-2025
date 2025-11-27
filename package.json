@@ -21,6 +21,7 @@
     "mongoose": "latest",
     "next": "16.0.5",
     "path": "latest",
+    "pnpm": "^10.24.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tailwind-merge": "^2.5.5",
