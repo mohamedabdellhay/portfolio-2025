@@ -54,7 +54,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Portfolio<span className="text-primary">.</span>
+            Abdellhay<span className="text-primary">.</span>
           </Link>
 
           {/* Desktop Navigation */}
