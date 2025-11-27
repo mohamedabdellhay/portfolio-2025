@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Portfolio | Developer",
+  title: "Abdellhay | Full-stack Developer nodejs express nestjs",
   description: "Full-stack developer portfolio showcasing projects and skills",
     generator: 'v0.app'
 }
