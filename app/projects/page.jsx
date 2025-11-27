@@ -3,6 +3,7 @@ import Project from "@/models/Project"
 import Link from "next/link"
 import { ArrowUpRight, Github, ExternalLink, Folder, Sparkles } from "lucide-react"
 
+
 async function getProjects() {
   await connectDB()
   const projects = await Project.find({}).sort({ createdAt: -1 })
@@ -137,6 +138,7 @@ export default async function ProjectsPage() {
           </div>
         )}
       </div>
+     
     </div>
   )
 }

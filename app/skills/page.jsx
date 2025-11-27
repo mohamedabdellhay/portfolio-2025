@@ -3,6 +3,7 @@ import Skill from "@/models/Skill"
 import Link from "next/link"
 import { ArrowUpRight, Code2, Server, Wrench, Sparkles } from "lucide-react"
 
+
 async function getSkills() {
   await connectDB()
   const skills = await Skill.find({}).sort({ level: -1 })
@@ -142,6 +143,8 @@ export default async function SkillsPage() {
           </Link>
         </div>
       </div>
+
+
     </div>
   )
 }

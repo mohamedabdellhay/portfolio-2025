@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { MessageSquare, ArrowLeft, Trash2, Mail, MailOpen, Loader2, Search, X, Clock, User, Send } from "lucide-react"
+import { MessageSquare, ArrowLeft, Trash2, Mail, MailOpen, Search, X, Clock, User, Send } from "lucide-react"
+import PageLoader from "@/components/page-loader"
 
 // Message detail modal component
 function MessageModal({ message, isOpen, onClose, onMarkRead, onDelete }) {
@@ -159,6 +160,10 @@ export default function MessagesPage() {
 
   const unreadCount = messages.filter((m) => !m.read).length
 
+  if (loading) {
+    return <PageLoader message="Loading messages..." />
+  }
+
   return (
     <div className="min-h-screen bg-background pt-20 pb-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -217,11 +222,7 @@ export default function MessagesPage() {
         </div>
 
         {/* Messages List */}
-        {loading ? (
-          <div className="flex items-center justify-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
-          </div>
-        ) : filteredMessages.length === 0 ? (
+        {filteredMessages.length === 0 ? (
           <div className="text-center py-20 bg-card rounded-2xl border border-border">
             <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
               <MessageSquare className="w-8 h-8 text-purple-600" />

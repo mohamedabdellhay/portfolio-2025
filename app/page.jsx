@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, Code2, Database, Sparkles } from "lucide-react"
 
-
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -128,7 +127,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
      
     </div>
   )

@@ -29,7 +29,7 @@ export default async function EditSkillPage({ params }) {
 
   return (
     <div className="min-h-screen bg-background pt-20 pb-16">
-      <div className="max-w-lg mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <Link
           href="/dashboard/skills"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Plus, Pencil, Trash2, ArrowLeft, Lightbulb, Loader2 } from "lucide-react"
+import PageLoader from "@/components/page-loader"
 
 export default function ManageSkills() {
   const [skills, setSkills] = useState([])
@@ -59,19 +60,12 @@ export default function ManageSkills() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-background pt-20 flex items-center justify-center">
-        <div className="flex items-center gap-3 text-muted-foreground">
-          <Loader2 className="w-5 h-5 animate-spin" />
-          <span>Loading skills...</span>
-        </div>
-      </div>
-    )
+    return <PageLoader message="Loading skills..." />
   }
 
   return (
     <div className="min-h-screen bg-background pt-20 pb-16">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Back Link */}
         <Link
           href="/dashboard"

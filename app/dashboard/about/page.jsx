@@ -79,7 +79,7 @@ export default function ManageAbout() {
 
   return (
     <div className="min-h-screen bg-background pt-20 pb-16">
-      <div className="max-w-2xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Back Link */}
         <Link
           href="/dashboard"

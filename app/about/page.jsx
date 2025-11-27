@@ -14,7 +14,7 @@ export default async function AboutPage() {
 
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
@@ -22,10 +22,10 @@ export default async function AboutPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">About Me</h1>
           </div>
           <Link
-            href="/contact"
+            href="/dashboard"
             className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-foreground rounded-lg text-sm font-medium border border-border hover:bg-secondary/80 transition-colors shrink-0"
           >
-             Get in touch
+            Edit Profile
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

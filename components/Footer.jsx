@@ -17,7 +17,7 @@ export default function Footer() {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/Abdellhay"
+              href="https://x.com/Abd_Ellhay"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Twitter

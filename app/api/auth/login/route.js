@@ -13,7 +13,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
     }
 
-    const user = await User.findOne({ email })
+    const user = await User.findOne({ email, isActive: true })
     if (!user) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 })
     }

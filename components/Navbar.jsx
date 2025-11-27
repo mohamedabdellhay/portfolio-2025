@@ -96,7 +96,12 @@ export function Navbar() {
                 Logout
               </button>
             ) : (
-             <></>
+              <Link
+                href="/login"
+                className="text-sm font-medium text-blue-600 hover:text-blue-500"
+              >
+                Login
+              </Link>
             )}
           </div>
         </div>

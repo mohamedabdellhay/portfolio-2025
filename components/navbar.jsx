@@ -26,30 +26,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-
-
-const handleLogout = async () => {
-  // Clear client-side storage
-  localStorage.clear();
-  sessionStorage.clear();
-
-  // Call API to clear server-side cookies
-  try {
-    await fetch('/api/auth/logout', { 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  } catch (error) {
-    console.error('Logout error:', error);
-  } finally {
-    // Redirect regardless
-    window.location.href = "/";
+  const handleLogout = async () => {
+    document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+    document.cookie = "isLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+    window.location.href = "/login"
   }
-};
-
-
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -99,7 +80,7 @@ const handleLogout = async () => {
           {/* Right Side */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://github.com/mohamed"
+              href="https://github.com/mohamedabdellhay"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -107,7 +88,7 @@ const handleLogout = async () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/mohamedabdellhay/"
+              href="https://linkedin.com/in/mohamedabdellhay"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -136,7 +117,7 @@ const handleLogout = async () => {
                 </button>
               </div>
             ) : (
-              ""
+             ""
             )}
           </div>
 
