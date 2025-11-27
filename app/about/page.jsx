@@ -22,10 +22,10 @@ export default async function AboutPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">About Me</h1>
           </div>
           <Link
-            href="/dashboard"
+            href="/contact"
             className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-foreground rounded-lg text-sm font-medium border border-border hover:bg-secondary/80 transition-colors shrink-0"
           >
-            Edit Profile
+            get in touch
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -55,7 +55,10 @@ export default async function AboutPage() {
                   </div>
                   <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span>hello@example.com</span>
+                  
+                    <a href="mailto:mohamedabdellhay1@gmail.com">
+                      mohamedabdellhay1@gmail.com
+                    </a>
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{about.content}</p>
@@ -65,10 +68,10 @@ export default async function AboutPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: "Years Experience", value: "5+" },
-                { label: "Projects Completed", value: "50+" },
-                { label: "Happy Clients", value: "30+" },
-                { label: "Technologies", value: "20+" },
+                { label: "Years Experience", value: "2+" },
+                { label: "Projects Completed", value: "10+" },
+                { label: "Happy Clients", value: "10+" },
+                { label: "Technologies", value: "10+" },
               ].map((stat) => (
                 <div key={stat.label} className="bg-card rounded-xl border border-border p-6 text-center">
                   <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>

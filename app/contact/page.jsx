@@ -109,8 +109,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
-                    <a href="mailto:hello@example.com" className="text-foreground hover:text-primary transition-colors">
-                      hello@example.com
+                    <a href="mailto:mohamedabdellhay1@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                      mohamedabdellhay1@gmail.com
                     </a>
                   </div>
                 </div>
@@ -121,8 +121,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                    <a href="tel:+1234567890" className="text-foreground hover:text-primary transition-colors">
-                      +1 (234) 567-890
+                    <a href="tel:+201550809074" className="text-foreground hover:text-primary transition-colors">
+                      +201550809074
                     </a>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Location</p>
-                    <p className="text-foreground">San Francisco, CA</p>
+                    <p className="text-foreground">Egypt</p>
                   </div>
                 </div>
               </div>
