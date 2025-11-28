@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" width="260" height="70" role="img">
+  <!-- Chevron Icon -->
+  <g transform="translate(14,36) scale(1)">
+    <polygon points="0,-12 18,0 0,12" fill="#004cf0ff" opacity="0.95"/>
+  </g>
+
+  <!-- Glow -->
+  <!-- <ellipse cx="18" cy="36" rx="18" ry="12" fill="#2563eb" opacity="0.08"/> -->
+
+  <!-- Main Name -->
+  <text x="55" y="44"
+        font-family='ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono"'
+        font-size="34"
+        fill="#000"
+        font-weight="600">
+    abdellhay
+  </text>
+
+  <!-- Dollar sign -->
+  <text x="205" y="44"
+        font-family='ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono"'
+        font-size="34"
+        fill="#000"
+        font-weight="600">
+    $
+  </text>
+
+  <!-- Blinking Cursor -->
+  <rect x="225" y="24" width="7" height="28" fill="#000">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

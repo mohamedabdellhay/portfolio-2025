@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+
+  <!-- subtle rounded square (optional outline) -->
+  <!-- <rect x="4" y="4" width="56" height="56" rx="12" ry="12"
+        fill="none" stroke="#2563eb" stroke-width="3" opacity="0.35"/> -->
+
+  <!-- Chevron icon (main symbol) -->
+  <g transform="translate(20,32) scale(1.4)">
+    <polygon points="0,-15 19,0 0,15" fill="#2563eb" opacity="1"/>
+  </g>
+
+  <!-- subtle glow -->
+  <ellipse cx="28" cy="32" rx="18" ry="12" fill="#2563eb" opacity="0.08"/>
+
+</svg>

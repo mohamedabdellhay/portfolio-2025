@@ -1,42 +1,51 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
-import { Github, Linkedin, Menu, X, LayoutDashboard, LogOut } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import {
+  Github,
+  Linkedin,
+  Menu,
+  X,
+  LayoutDashboard,
+  LogOut,
+} from "lucide-react";
 
 export function Navbar() {
-  const pathname = usePathname()
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const hasToken = document.cookie.includes("isLoggedIn=true")
+    const hasToken = document.cookie.includes("isLoggedIn=true");
     if (hasToken !== isLoggedIn) {
-      setIsLoggedIn(hasToken)
+      setIsLoggedIn(hasToken);
     }
-  }, [pathname, isLoggedIn])
+  }, [pathname, isLoggedIn]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogout = async () => {
-   await fetch("/api/auth/logout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-   })
-   document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-   document.cookie = "isLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-    window.location.href = "/login"
-  }
+    await fetch("/api/auth/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    document.cookie =
+      "isLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    window.location.href = "/login";
+  };
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -44,9 +53,9 @@ export function Navbar() {
     { href: "/skills", label: "Skills" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" }, // Added Contact to nav links
-  ]
+  ];
 
-  const isDashboard = pathname.startsWith("/dashboard")
+  const isDashboard = pathname.startsWith("/dashboard");
 
   return (
     <nav
@@ -59,8 +68,11 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Abdellhay<span className="text-primary">.</span>
+          <Link
+            href="/"
+            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+          >
+            <Image src="/logo-small.svg" alt="logo" width={120} height={40} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +82,9 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors relative group ${
-                  pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -123,13 +137,20 @@ export function Navbar() {
                 </button>
               </div>
             ) : (
-             ""
+              ""
             )}
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -143,7 +164,9 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-sm font-medium transition-colors ${
-                    pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {link.label}
@@ -166,12 +189,12 @@ export function Navbar() {
                   </button>
                 </>
               ) : (
-               ""
+                ""
               )}
             </div>
           </div>
         )}
       </div>
     </nav>
-  )
+  );
 }
