@@ -32,7 +32,15 @@ export async function PUT(request, { params }) {
     const { id } = await params
     const body = await request.json()
     const project = await Project.findByIdAndUpdate(id, body, { new: true, runValidators: true })
-
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/revalidate?secret=${process.env.REVALIDATE_SECRET}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 })
     }
@@ -55,7 +63,15 @@ export async function DELETE(request, { params }) {
     await connectDB()
     const { id } = await params
     const project = await Project.findByIdAndDelete(id)
-
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/revalidate?secret=${process.env.REVALIDATE_SECRET}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 })
     }

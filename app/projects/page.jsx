@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowUpRight, Github, ExternalLink, Folder, Sparkles } from "lucide-react"
 
 
+
 async function getProjects() {
   await connectDB()
   const projects = await Project.find({}).sort({ createdAt: -1 })

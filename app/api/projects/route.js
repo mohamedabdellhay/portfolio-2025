@@ -27,6 +27,15 @@ export async function POST(request) {
     await connectDB()
     const body = await request.json()
     const project = await Project.create(body)
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/revalidate?secret=${process.env.REVALIDATE_SECRET}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     return NextResponse.json({ project }, { status: 201 })
   } catch (error) {
     return NextResponse.json({ error: "Failed to create project" }, { status: 500 })

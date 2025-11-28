@@ -36,7 +36,15 @@ export async function PUT(request, { params }) {
     if (!skill) {
       return NextResponse.json({ error: "Skill not found" }, { status: 404 })
     }
-
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/revalidate?secret=${process.env.REVALIDATE_SECRET}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     return NextResponse.json({ skill }, { status: 200 })
   } catch (error) {
     return NextResponse.json({ error: "Failed to update skill" }, { status: 500 })
@@ -59,7 +67,15 @@ export async function DELETE(request, { params }) {
     if (!skill) {
       return NextResponse.json({ error: "Skill not found" }, { status: 404 })
     }
-
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/revalidate?secret=${process.env.REVALIDATE_SECRET}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     return NextResponse.json({ message: "Skill deleted" }, { status: 200 })
   } catch (error) {
     return NextResponse.json({ error: "Failed to delete skill" }, { status: 500 })
